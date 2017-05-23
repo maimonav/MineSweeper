@@ -262,7 +262,7 @@ function checkWinGame(){
     }
     if((minesNum-mines)==countCorrFlags&&countCellsLeft==mines||
         (mines==0&&minesNum==countCorrFlags)){
-        window.alert("You Win!")
+        window.alert("You Win! let's have another one.")
         newGame();
     }
 
