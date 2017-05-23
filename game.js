@@ -191,8 +191,12 @@ function clickedOnCell(e,i,j){
     else if(document.getElementById(td).getElementsByTagName('div').length==0) {
         document.getElementById(td).onclick = "";
         var val = document.getElementById(cell).innerHTML;
-        if (val == "*")
+        if (val == "*"){
+            document.getElementById(cell).style.display = 'block';
+            document.getElementById(td).style.backgroundColor = "lightcyan";
             loseGame(i,j);
+        }
+
         else if (val == "")
             showBoard(i, j);
             else {
@@ -234,8 +238,9 @@ function loseGame(i,j){
     var td="td_"+i+"_"+j;
     document.getElementById(td).style.backgroundColor = 'red';
     document.getElementById(cell).style.display='block';
-    alert("You Lose!");
+    window.alert("You Lose!");
     newGame();
+
 }
 
 //checks if the user win the game
