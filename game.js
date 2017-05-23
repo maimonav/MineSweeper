@@ -193,7 +193,8 @@ function clickedOnCell(e,i,j){
         var val = document.getElementById(cell).innerHTML;
         if (val == "*"){
             document.getElementById(cell).style.display = 'block';
-            document.getElementById(td).style.backgroundColor = "lightcyan";
+            document.getElementById(td).style.backgroundColor = "red";
+            visibility(true);
             loseGame(i,j);
         }
 
@@ -238,7 +239,7 @@ function loseGame(i,j){
     var td="td_"+i+"_"+j;
     document.getElementById(td).style.backgroundColor = 'red';
     document.getElementById(cell).style.display='block';
-    window.alert("Oops,You Lose!");
+    window.alert("Oops,You Lose! let's try again.");
     newGame();
 
 }
