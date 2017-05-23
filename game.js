@@ -238,7 +238,7 @@ function loseGame(i,j){
     var td="td_"+i+"_"+j;
     document.getElementById(td).style.backgroundColor = 'red';
     document.getElementById(cell).style.display='block';
-    window.alert("You Lose!");
+    window.alert("Oops,You Lose!");
     newGame();
 
 }
