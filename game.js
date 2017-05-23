@@ -5,7 +5,6 @@ var mines;
 var minesNum;
 var board;
 
-//hey it works
 //Initials click on "Start new game"
 document.getElementById("newgame").onclick = function () {
 
