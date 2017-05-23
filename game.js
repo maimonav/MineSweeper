@@ -195,7 +195,8 @@ function clickedOnCell(e,i,j){
             document.getElementById(cell).style.display = 'block';
             document.getElementById(td).style.backgroundColor = "red";
             visibility(true);
-            loseGame(i,j);
+            return loseGame(i,j);
+            
         }
 
         else if (val == "")
