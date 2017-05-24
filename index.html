@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <h1 id="ms" align="center">Mines Sweeper</h1 >
+</head>
+<body>
+
+<p id="data" align="center">
+Dare to Zlatan?
+<input type="checkbox"id ="zlatan" onclick="zlatanMode()">
+<br>
+Please choose your board width:
+<input id="width" value="">
+<br>
+Please choose your board height:
+<input id="height" value="">
+<br>
+Please choose your mines number:
+<input id="mines" value="">
+    <br>
+<button id="newgame" onmouseover="this.style.color='blue'"
+            onmouseleave="this.style.color='black'">Start new game</button>
+<button id="exit" onclick="self.close()"
+            onmouseover="this.style.color='red'"
+            onmouseleave="this.style.color='black'">exit</button>
+    <br>
+<h3 id="flagsLeft" align="center"></h3>
+
+</p>
+</body>
+
+    <style >
+
+        td {
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            z-index: 1;
+            border:4px outset CornflowerBlue;
+            background-color: DeepSkyBlue;
+        }
+        table{
+            margin: auto;
+        }
+        div{
+            text-align: center;
+            position: relative;
+            color: #0e03ff;
+            font-family: "Impact";
+        }
+        span{
+            color: #ff353d;
+            font-family: "Impact";
+        }
+        h1{
+            color: #000000;
+            font-size: 40px;
+            font-family: "Brush Script MT";
+        }
+
+        p{
+            color: #000000;
+            font-family: "Arial Unicode MS";
+            font-size: 17px;
+        }
+
+    </style>
+
+    <table id="table"></table>
+    <script src="game.js"></script>
+
+</html>
+
