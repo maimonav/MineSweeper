@@ -252,7 +252,7 @@ function checkWinGame(){
         for (var j = 0; j < width; j++) {
             var td = "td_" + i + "_" + j;
             var cell = "cell_" + i + "_" + j;
-            if (document.getElementById(cell).innerHTML == '*' &&
+             if (document.getElementById(cell).innerHTML == '*' &&
                 document.getElementById(td).getElementsByTagName('div').length!=0)
                 countCorrFlags++;
             if(document.getElementById(td).getElementsByTagName('div').length==0&&
