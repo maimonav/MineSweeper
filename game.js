@@ -243,6 +243,7 @@ function disableBoard(){
             var cell="cell_"+i+"_"+j;
             var td="td_"+i+"_"+j;
             document.getElementById(td).onclick = "";
+            document.getElementById(cell).style.display = 'block';
         }
     }
 }
@@ -256,6 +257,7 @@ function loseGame(i,j){
     document.getElementById("win/lose").innerHTML = "Oops,You Lose! let's try again.";
     document.getElementById("win/lose").style.color = "red";
     disableBoard();
+
 }
 
 //checks if the user win the game
