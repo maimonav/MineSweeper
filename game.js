@@ -15,6 +15,7 @@ document.getElementById("newgame").onclick = function () {
 //Checks user's input
  function checkValidInput(){
 
+    document.getElementById("win/lose").innerHTML = "";
     height=parseInt(document.getElementById("height").value);
     width=parseInt(document.getElementById("width").value);
     mines=parseInt(document.getElementById("mines").value);
@@ -34,6 +35,7 @@ function resetPage(){
     document.getElementById("mines").value = "";
     document.getElementById("table").innerHTML="";
     document.getElementById("flagsLeft").innerHTML="";
+    document.getElementById("win/lose").innerHTML="";
 }
 
 //Starts new game
@@ -234,15 +236,26 @@ function showBoard(i,j){
     }
 }
 
+//Disables board clicks
+function disableBoard(){
+    for(var i = 0; i < height; i++){
+        for(var j = 0;j < width;j++){
+            var cell="cell_"+i+"_"+j;
+            var td="td_"+i+"_"+j;
+            document.getElementById(td).onclick = "";
+        }
+    }
+}
+
 //Notices the player that he lose the game
 function loseGame(i,j){
     var cell="cell_"+i+"_"+j;
     var td="td_"+i+"_"+j;
-    document.getElementById(td).style.backgroundColor = 'red';
+    document.getElementById(td).style.backgroundColor = 'black';
     document.getElementById(cell).style.display='block';
-    window.alert("Oops,You Lose! let's try again.");
-    newGame();
-
+    document.getElementById("win/lose").innerHTML = "Oops,You Lose! let's try again.";
+    document.getElementById("win/lose").style.color = "red";
+    disableBoard();
 }
 
 //checks if the user win the game
@@ -262,8 +275,9 @@ function checkWinGame(){
     }
     if((minesNum-mines)==countCorrFlags&&countCellsLeft==mines||
         (mines==0&&minesNum==countCorrFlags)){
-        window.alert("You Win! let's have another one.")
-        newGame();
+        document.getElementById("win/lose").innerHTML = "You Win! let's have another one.";
+        document.getElementById("win/lose").style.color = "green";
+        disableBoard();
     }
 
 }
